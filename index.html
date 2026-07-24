@@ -303,94 +303,59 @@
       </section>
 
       <section class="section contact" id="contact">
-        <div class="section-inner contact-panel">
-          <div class="contact-intro">
-            <p class="eyebrow">📞 Запись на урок</p>
-            <h2>Оставь контакты — перезвоню</h2>
-            <p class="contact-lead">
-              Напишите имя и телефон — я свяжусь с Вами, чтобы обсудить цель и
-              формат занятий.
-            </p>
-          </div>
+        <div class="section-inner">
+          <div class="contact-panel">
 
-          <form class="callback-form" id="callback-form">
-            <label class="field">
-              <span>Имя</span>
-              <input
-                type="text"
-                name="name"
-                placeholder="Как к Вам обращаться?"
-                required
-              />
-            </label>
-            <label class="field">
-              <span>Телефон</span>
-              <input
-                type="tel"
-                name="phone"
-                placeholder="+7 900 000-00-00"
-                required
-              />
-            </label>
-            <label class="field">
-              <span>Комментарий <small>(необязательно)</small></span>
-              <textarea
-                name="comment"
-                rows="3"
-                placeholder="Уровень, цель, удобное время…"
-              ></textarea>
-            </label>
-            <button class="btn btn-primary btn-full" type="submit">
-              Перезвоните мне 📞
-            </button>
-            <p
-              class="form-status"
-              id="form-status"
-              role="status"
-              aria-live="polite"
-            ></p>
-          </form>
+            <header class="contact-header">
+              <p class="eyebrow">📞 Запись на урок</p>
+              <h2>Запишитесь на бесплатный урок</h2>
+              <p class="contact-lead">Первый пробный урок — бесплатно 🎁</p>
+            </header>
 
-          <div class="contact-messengers">
-            <p class="messengers-label">или напиши напрямую</p>
-            <div class="contact-channels">
-              <a
-                class="channel-card"
-                href="https://t.me/iamleka"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+            <div class="contact-channels-primary">
+              <a class="channel-card-lg card-tg" href="https://t.me/iamleka" target="_blank" rel="noopener noreferrer">
                 <span>✈️</span>
                 <strong>Telegram</strong>
+                <small>@iamleka</small>
               </a>
-              <a
-                class="channel-card"
-                href="tel:+79183157761"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span>💜</span>
-                <strong>MAX</strong>
-              </a>
-              <a
-                class="channel-card"
-                href="https://wa.me/79183157761"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a class="channel-card-lg card-wa" href="https://wa.me/79183157761" target="_blank" rel="noopener noreferrer">
                 <span>📱</span>
                 <strong>WhatsApp</strong>
+                <small>+7 918 315-77-61</small>
               </a>
-              <a
-                class="channel-card"
-                href="https://instagram.com/_iamleka_"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a class="channel-card-lg card-ig" href="https://instagram.com/_iamleka_" target="_blank" rel="noopener noreferrer">
                 <span>📸</span>
                 <strong>Instagram</strong>
+                <small>_iamleka_</small>
+              </a>
+              <a class="channel-card-lg card-mx" href="tel:+79183157761" rel="noopener noreferrer">
+                <span>💜</span>
+                <strong>MAX</strong>
+                <small>+7 918 315-77-61</small>
               </a>
             </div>
+
+            <div class="contact-divider">
+              <span>или оставьте номер — перезвоним</span>
+            </div>
+
+            <form class="callback-form" id="callback-form">
+              <div class="callback-fields">
+                <label class="field">
+                  <span>Имя</span>
+                  <input type="text" name="name" placeholder="Как к Вам обращаться?" required />
+                </label>
+                <label class="field">
+                  <span>Телефон</span>
+                  <input type="tel" name="phone" placeholder="+7 900 000-00-00" required />
+                </label>
+              </div>
+              <button class="btn btn-primary btn-full" type="submit">
+                Перезвоните мне 📞
+              </button>
+              <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            </form>
+
           </div>
         </div>
       </section>

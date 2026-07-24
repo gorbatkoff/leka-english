@@ -709,47 +709,100 @@ p {
 }
 
 .contact-panel {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "intro intro"
-    "form messengers";
-  gap: 1.25rem 1.5rem;
   padding: clamp(1.6rem, 4vw, 2.4rem);
-  background: linear-gradient(
-    135deg,
-    var(--yellow) 0%,
-    var(--pink) 55%,
-    var(--blue) 100%
-  );
+  background: linear-gradient(135deg, var(--yellow) 0%, var(--pink) 55%, var(--blue) 100%);
   border: 2px solid var(--ink);
   border-radius: 1.6rem;
   box-shadow: 8px 8px 0 var(--ink);
+  display: grid;
+  gap: 1.75rem;
 }
 
-.contact-intro {
-  grid-area: intro;
-}
-
-.contact-intro h2 {
+.contact-header h2 {
   font-family: var(--font-display);
   font-weight: 800;
   font-size: clamp(1.55rem, 3.2vw, 2.2rem);
   line-height: 1.12;
   letter-spacing: -0.04em;
-  margin-bottom: 0.6rem;
-  max-width: 18ch;
+  margin-bottom: 0.5rem;
 }
 
 .contact-lead {
-  color: var(--ink);
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+.contact-channels-primary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.channel-card-lg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 1.1rem 0.75rem;
+  background: var(--white);
+  border: 2px solid var(--ink);
+  border-radius: 1.2rem;
+  box-shadow: 4px 4px 0 var(--ink);
+  text-align: center;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+
+.channel-card-lg:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.channel-card-lg span {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.channel-card-lg strong {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.channel-card-lg small {
+  font-size: 0.75rem;
   font-weight: 700;
-  max-width: 42ch;
-  line-height: 1.5;
+  color: var(--muted);
+}
+
+.card-tg { background: #e8f4ff; }
+.card-wa { background: #e8ffe8; }
+.card-ig { background: var(--pink-soft); }
+.card-mx { background: #ede8ff; }
+
+.contact-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-divider::before,
+.contact-divider::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background: var(--ink);
+  opacity: 0.2;
+}
+
+.contact-divider span {
+  font-weight: 800;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  color: var(--ink);
 }
 
 .callback-form {
-  grid-area: form;
   display: grid;
   gap: 0.85rem;
   padding: 1.2rem;
@@ -757,6 +810,12 @@ p {
   border: 2px solid var(--ink);
   border-radius: 1.2rem;
   box-shadow: 4px 4px 0 var(--ink);
+}
+
+.callback-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
 }
 
 .field {
@@ -818,55 +877,6 @@ p {
   opacity: 1;
 }
 
-.contact-messengers {
-  grid-area: messengers;
-  display: grid;
-  align-content: start;
-  gap: 0.75rem;
-}
-
-.messengers-label {
-  margin: 0;
-  font-weight: 800;
-  font-size: 0.95rem;
-}
-
-.contact-channels {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.65rem;
-}
-
-.channel-card {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  padding: 0.95rem 1rem;
-  background: var(--white);
-  border: 2px solid var(--ink);
-  border-radius: 1rem;
-  box-shadow: 4px 4px 0 var(--ink);
-  font-weight: 800;
-  transition:
-    transform 0.2s var(--ease),
-    box-shadow 0.2s var(--ease);
-}
-
-.channel-card:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 var(--ink);
-}
-
-.channel-card span {
-  font-size: 1.35rem;
-  line-height: 1;
-}
-
-.channel-card strong {
-  font-family: var(--font-display);
-  font-size: 0.95rem;
-  letter-spacing: -0.02em;
-}
 
 .reviews {
   background: var(--white);
@@ -990,16 +1000,12 @@ p {
     grid-template-columns: 1fr;
   }
 
-  .contact-panel {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "intro"
-      "form"
-      "messengers";
+  .contact-channels-primary {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .contact-channels {
-    grid-template-columns: repeat(2, 1fr);
+  .callback-fields {
+    grid-template-columns: 1fr;
   }
 
   .about-intro {
