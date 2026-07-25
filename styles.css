@@ -952,6 +952,17 @@ p {
   font-weight: 700;
 }
 
+.footer-phone {
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-phone:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 900px) {
   .menu-toggle {
     display: inline-flex;
