@@ -307,6 +307,7 @@ p {
   position: relative;
   width: min(100%, 280px);
   height: 220px;
+  margin-top: 24px;
 }
 
 .stack-card {
@@ -961,6 +962,15 @@ p {
 
 .footer-phone:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .s1 {
+    z-index: 0;
+  }
+  .stack-card {
+    z-index: 1;
+  }
 }
 
 @media (max-width: 900px) {
