@@ -733,10 +733,29 @@ p {
   font-size: 1.05rem;
 }
 
+.contact-price {
+  font-weight: 700;
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
 .contact-channels-primary {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0.75rem;
+}
+
+.contact-channels-primary.variant-b {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.contact-channels-primary.variant-b .card-tg {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 1.1rem;
+  padding: 1.3rem;
 }
 
 .channel-card-lg {
@@ -881,6 +900,51 @@ p {
 
 .reviews {
   background: var(--white);
+}
+
+.pricing-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: var(--yellow);
+  border: 2px solid var(--ink);
+  border-radius: 1.6rem;
+  box-shadow: 6px 6px 0 var(--ink);
+  align-items: center;
+}
+
+.pricing-amount {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+  margin: 0.25rem 0;
+}
+
+.pricing-amount span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.pricing-note {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+.pricing-badge {
+  display: inline-block;
+  font-weight: 800;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-availability p:last-child {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.5;
 }
 
 .reviews-grid {
