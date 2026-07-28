@@ -533,6 +533,12 @@
       const AB_TOKEN = "8969373336:AAGw_atmEI4uZKjAPIzVaS_2HkRB_uZ82Y4";
       const AB_CHAT = "-1004356463899";
 
+      const fromSources = { garantiya: "ЖК Гарантия", fountain: "ЖК Фонтаны" };
+      const fromParam = new URLSearchParams(location.search).get("from");
+      if (fromParam) localStorage.setItem("ab_from", fromParam);
+      const fromKey = localStorage.getItem("ab_from");
+      const fromLabel = fromKey ? (fromSources[fromKey] || fromKey) : "прямой заход";
+
       function sendAbEvent(text) {
         fetch(`https://api.telegram.org/bot${AB_TOKEN}/sendMessage`, {
           method: "POST",
@@ -545,7 +551,7 @@
       if (!abVariant) {
         abVariant = Math.random() < 0.5 ? "A" : "B";
         localStorage.setItem("ab_contact", abVariant);
-        sendAbEvent(`👁 Показан вариант ${abVariant}`);
+        sendAbEvent(`👁 Показан вариант ${abVariant} | 📍 ${fromLabel}`);
       }
 
       if (abVariant === "B") {
@@ -557,7 +563,7 @@
       document.querySelectorAll(".channel-card-lg").forEach((link) => {
         link.addEventListener("mousedown", () => {
           const messenger = link.querySelector("strong")?.textContent || "?";
-          sendAbEvent(`✅ Клик: ${messenger} | вариант ${abVariant}`);
+          sendAbEvent(`✅ Клик: ${messenger} | вариант ${abVariant} | 📍 ${fromLabel}`);
         });
       });
     </script>
