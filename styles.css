@@ -272,6 +272,18 @@ p {
   animation: pop-in 0.8s var(--ease) both;
 }
 
+@keyframes btn-bounce {
+  0%, 100% { transform: translateY(0); }
+  20% { transform: translateY(-8px); }
+  40% { transform: translateY(0); }
+  60% { transform: translateY(-5px); }
+  80% { transform: translateY(0); }
+}
+
+.hero-actions .btn-primary {
+  animation: btn-bounce 0.8s ease 1.2s 1 both;
+}
+
 @keyframes pop-in {
   from {
     opacity: 0;
