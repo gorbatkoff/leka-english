@@ -769,12 +769,27 @@ p {
   border-radius: 1.2rem;
   box-shadow: 4px 4px 0 var(--ink);
   text-align: center;
-  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+  position: relative;
+  transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease);
+}
+
+.channel-card-lg::after {
+  content: "↗";
+  position: absolute;
+  top: 0.45rem;
+  right: 0.55rem;
+  font-size: 0.75rem;
+  opacity: 0.35;
+  transition: opacity 0.15s;
 }
 
 .channel-card-lg:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 var(--ink);
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0 var(--ink);
+}
+
+.channel-card-lg:hover::after {
+  opacity: 0.8;
 }
 
 .channel-card-lg span {
