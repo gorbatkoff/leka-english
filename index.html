@@ -551,7 +551,9 @@
       if (!abVariant) {
         abVariant = Math.random() < 0.5 ? "A" : "B";
         localStorage.setItem("ab_contact", abVariant);
-        sendAbEvent(`👁 Показан вариант ${abVariant} | 📍 ${fromLabel}`);
+        sendAbEvent(`👁 Новый посетитель | вариант ${abVariant} | 📍 ${fromLabel}`);
+      } else {
+        sendAbEvent(`🔄 Повторный заход | вариант ${abVariant} | 📍 ${fromLabel}`);
       }
 
       if (abVariant === "B") {
